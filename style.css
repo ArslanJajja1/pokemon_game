@@ -1,0 +1,117 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&family=Roboto+Condensed:wght@400;600;700;800&display=swap");
+
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+/* Quiz Container Styles */
+#quiz-container {
+  display: flex;
+  width: 360px;
+  height: 640px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/* Question and Feedback Wrapper Styles */
+#question-feedback-wrapper {
+  height: 15%;
+}
+
+/* Question Styles */
+#question {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+/* Feedback Styles */
+#feedback {
+  text-align: center;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+/* Pokémon Image Styles */
+#pokemon-image {
+  width: 200px;
+  height: 200px;
+}
+
+/* Options Container Styles */
+#options-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+/* Option Button Styles */
+.option {
+  width: 150px;
+  height: 60px;
+  color: #FFF;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  background-color: #3678DC;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Correct Option Styles */
+.correct {
+  background-color: #31A335;
+}
+
+/* Incorrect Option Styles */
+.incorrect {
+  background-color: #D33838;
+}
+
+/* Correct Feedback Styles */
+.correct-feedback {
+  color: #31A335;
+}
+
+/* Incorrect Feedback Styles */
+.incorrect-feedback {
+  color: #D33838;
+}
+
+/* Points Display Styles */
+#points {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}

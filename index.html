@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Pokémon Quiz</title>
+</head>
+<body>
+  <!-- Quiz Container -->
+  <div id="quiz-container">
+    
+    <!-- Question and Feedback Wrapper -->
+    <div id="question-feedback-wrapper">
+      <h3 id="question">Who’s this Pokemon?</h3>
+      <p id="feedback"></p>
+    </div>
+    
+    <!-- Pokémon Image -->
+    <img id="pokemon-image" src="" alt="Pokémon Image">
+    
+    <!-- Options Container -->
+    <div id="options-container"></div>
+    
+    <!-- Points Display -->
+    <p id="points">Points: <span id="current-points">0</span></p>
+    
+    <!-- Select Number of questions -->
+    <div id="settings-container">
+      <label for="num-questions">Number of Questions:</label>
+      <input type="number" id="num-questions" min="1" max="151" value="10">
+      <button onclick="startGame()">Start Game</button>
+    </div>
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="./script.js"></script>
+</body>
+</html>
