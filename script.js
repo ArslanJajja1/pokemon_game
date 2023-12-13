@@ -28,7 +28,8 @@ async function startGame() {
 
   // Hide the settings container and start fetching questions
   document.getElementById("settings-container").style.display = "none";
-  await fetchPokemon();
+   // Increment question
+   currentQuestion++;
   // Unlock the game, when game starts
   clickable = true;
 }
