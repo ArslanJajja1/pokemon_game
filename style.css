@@ -30,6 +30,8 @@ body {
 /* Question and Feedback Wrapper Styles */
 #question-feedback-wrapper {
   height: 15%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 /* Question Styles */
@@ -114,4 +116,10 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: 32px;
+}
+/* Settings Styles */
+#settings-points-wrapper{
+  height: 15%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

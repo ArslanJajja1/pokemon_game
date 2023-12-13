@@ -1,6 +1,6 @@
-                                          // Pokémon Quiz Game Script
+                                              // Pokémon Quiz Game Script  //
 
-                            // --------------------------------------------------------- //
+                                // --------------------------------------------------------- //
 
 // API URL for Pokémon data
 const pokemonApiUrl = "https://pokeapi.co/api/v2/pokemon/";
@@ -10,7 +10,10 @@ let currentQuestion = -1;
 let score = 0;
 
 // Default value of Total questions
-let totalQuestions = 10; 
+let totalQuestions = 10;
+
+// Variable to track whether the game is in a clickable state
+let clickable = true;
 
 // Function to start the game
 async function startGame() {
@@ -26,6 +29,8 @@ async function startGame() {
   // Hide the settings container and start fetching questions
   document.getElementById("settings-container").style.display = "none";
   await fetchPokemon();
+  // Unlock the game, when game starts
+  clickable = true;
 }
 
 // Function to fetch a random Pokemon
@@ -80,7 +85,6 @@ async function getRandomUniquePokemonName(options) {
   return randomName;
 }
 
-
 // Function to get the name of a random Pokemon
 async function getRandomPokemonName() {
   const randomId = Math.floor(Math.random() * 151) + 1;
@@ -125,11 +129,21 @@ function showQuestion(question) {
 
 // Function to check the user's answer
 function checkAnswer(selectedOption, correctAnswer, selectedOptionElement) {
-  // Check if the game has been started
-  if (currentQuestion <= 0) {
+
+   // Check if the game has been started
+   if (currentQuestion <= 0) {
     alert("Please start the game first.");
     return;
   }
+
+  // Check if the game is in a clickable state
+  if (!clickable) {
+    console.log('Clickable is false')
+    return;
+  }
+
+  // Lock the game to prevent rapid button clicks
+  clickable = false;
 
   // Display feedback and update score
   document.getElementById("feedback").style.display = "block";
@@ -147,22 +161,22 @@ function checkAnswer(selectedOption, correctAnswer, selectedOptionElement) {
 
   // Update score and move to the next question after a delay
   updateScore();
-  
+
   setTimeout(() => {
     selectedOptionElement.classList.remove("correct", "incorrect");
     document.getElementById("feedback").style.display = "none";
     document.getElementById("feedback").innerText = "";
     document.getElementById("feedback").classList.remove("correct-feedback", "incorrect-feedback");
-
     // Fetch a new question or end the game
     if (currentQuestion < totalQuestions) {
       fetchPokemon();
+    // Unlock the game for the next question
+    clickable = true;
     } else {
       endGame();
     }
   }, 2000);
 }
-
 
 // Function to update the displayed score
 function updateScore() {
